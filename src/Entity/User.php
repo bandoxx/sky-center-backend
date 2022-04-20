@@ -35,7 +35,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'date')]
     private $birthday;
 
-    #[ORM\Column(type: 'string', length: 10)]
+    #[ORM\Column(type: 'smallint')]
     private $gender;
 
     #[ORM\Column(type: 'boolean')]
@@ -154,12 +154,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGender(): ?string
+    public function getGender(): ?int
     {
         return $this->gender;
     }
 
-    public function setGender(string $gender): self
+    public function setGender(int $gender): self
     {
         $this->gender = $gender;
 
